@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import Icon from "@/components/ui/icon";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import Quiz from "@/components/Quiz";
 
 const Index = () => {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
@@ -26,6 +27,7 @@ const Index = () => {
           <h1 className="text-2xl font-bold text-primary">Профи Академия</h1>
           <nav className="hidden md:flex gap-8">
             <a href="#hero" className="text-foreground hover:text-primary transition-colors">Главная</a>
+            <a href="#quiz" className="text-foreground hover:text-primary transition-colors">Тест</a>
             <a href="#services" className="text-foreground hover:text-primary transition-colors">Услуги</a>
             <a href="#contact" className="text-foreground hover:text-primary transition-colors">Контакты</a>
           </nav>
@@ -48,7 +50,7 @@ const Index = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" asChild className="text-lg">
-                  <a href="#services">Выбрать программу</a>
+                  <a href="#quiz">Пройти тест</a>
                 </Button>
                 <Button size="lg" variant="outline" asChild className="text-lg">
                   <a href="#contact">Консультация</a>
@@ -85,6 +87,18 @@ const Index = () => {
               <p className="text-lg">применяют знания</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="quiz" className="py-20 px-4 bg-gradient-to-br from-accent/5 to-primary/5">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Подберём программу за 2 минуты</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Пройдите короткий тест и узнайте, какой формат обучения подходит именно вам
+            </p>
+          </div>
+          <Quiz />
         </div>
       </section>
 
